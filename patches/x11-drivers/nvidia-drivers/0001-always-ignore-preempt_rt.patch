@@ -1,0 +1,13 @@
+--- a/kernel/conftest.sh
++++ b/kernel/conftest.sh
+@@ -3589,9 +3589,7 @@
+         #
+         VERBOSE=$6
+ 
+-        if [ -n "$IGNORE_PREEMPT_RT_PRESENCE" ]; then
+-            exit 0
+-        fi
++        exit 0
+ 
+         if test_configuration_option CONFIG_PREEMPT_RT; then
+             PREEMPT_RT_PRESENT=1

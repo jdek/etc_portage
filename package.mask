@@ -1,0 +1,11 @@
+# bug in this version
+=dev-python/cython-0.29.14-r1
+# gnome-base/dconf requires older meson
+>=dev-util/meson-0.52
+# nototools requires fonttools but also py2
+>=dev-python/fonttools-4.0.1
+>=x11-base/xorg-server-1.20.6
+# broken asf
+=net-dns/getdns-1.6.0_beta1
+# need to manually patch kernels for PREEMPT_RT
+>sys-kernel/gentoo-sources-5.4.5

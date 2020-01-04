@@ -1,0 +1,20 @@
+@@ -, +, @@ 
+ ThreadHideFromDebugger
+---
+ dlls/ntdll/thread.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+--- a/dlls/ntdll/thread.c	
++++ a/dlls/ntdll/thread.c	
+@@ -1430,6 +1430,11 @@ NTSTATUS WINAPI NtQueryInformationThread( HANDLE handle, THREADINFOCLASS class,
+         *(BOOL*)data = FALSE;
+         if (ret_len) *ret_len = sizeof(BOOL);
+         return STATUS_SUCCESS;
++    case ThreadHideFromDebugger:
++        if (length != sizeof(char)) return STATUS_INFO_LENGTH_MISMATCH;
++        *(char*)data = "\x01";
++        if (ret_len) *ret_len = sizeof(char);
++        return STATUS_SUCCESS;
+     case ThreadPriority:
+     case ThreadBasePriority:
+     case ThreadImpersonationToken:
+-- 

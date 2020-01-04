@@ -1,0 +1,62 @@
+# package.use
+
+sys-apps/systemd dns-over-tls abi_x86_32
+sys-apps/dbus user-session
+
+# Xorg
+media-libs/mesa -vulkan -gallium -llvm
+
+# desktop
+kde-plasma/plasma-meta display-manager grub pm-utils pulseaudio sddm
+kde-plasma/kde-cli-tools kdesu
+kde-apps/kio-extras mtp
+app-i18n/mozc emacs ibus
+
+media-gfx/darktable gphoto2 jpeg2k
+
+# browsers
+www-client/firefox hwaccel lto pgo
+
+# multimedia
+media-sound/cmus cue ffmpeg opus libsamplerate
+media-gfx/gimp heif jpeg2k webp xpm
+media-video/obs-studio nvenc luajit
+media-video/vlc libass bluray opus
+media-video/ffmpeg theora jpeg2k video_cards_nvidia
+
+media-gfx/blender cycles ffmpeg fftw jpeg2k openvdb openimageio jemalloc osl llvm openvdb_abi_5
+media-gfx/openvdb openvdb_abi_v5
+
+# torrent
+net-p2p/rtorrent xmlrpc
+#www-apps/rutorrent vhosts
+
+# web
+www-servers/nginx threads vim-syntax
+dev-lang/php fpm gd threads sqlite xmlreader intl zip truetype xmlwriter pdo curl
+app-eselect/eselect-php fpm
+net-libs/gnutls tools
+net-dns/getdns stubby nettle -unbound -doc
+
+# system
+dev-db/sqlite secure-delete
+app-admin/sudo -sendmail -ldap
+dev-lang/python sqlite
+
+# development
+app-editors/vim
+app-editors/emacs* xft toolkit-scroll-bars ssl cairo libxml2 source sound
+sys-devel/gdb source-highlight -python
+net-mail/mu emacs
+
+dev-lang/mono
+
+app-emulation/qemu qemu_user_targets_arm qemu_softmmu_targets_arm static-user
+dev-libs/glib static-libs
+sys-libs/zlib static-libs
+sys-apps/attr static-libs
+dev-libs/libpcre static-libs
+
+# wine
+virtual/wine staging
+app-emulation/wine-staging vkd3d

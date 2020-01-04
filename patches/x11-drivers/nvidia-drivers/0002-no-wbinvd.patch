@@ -1,0 +1,23 @@
+--- a/kernel/common/inc/nv-linux.h
++++ b/kernel/common/inc/nv-linux.h
+@@ -328,8 +328,9 @@
+   })
+ #endif
+ 
+-#ifndef wbinvd
+-#define wbinvd() __asm__ __volatile__("wbinvd" ::: "memory");
++#ifdef wbinvd
++#undef wbinvd
++#define wbinvd() // __asm__ __volatile__("wbinvd" ::: "memory");
+ #endif
+ #endif /* defined(NVCPU_X86) */
+ 
+@@ -417,7 +418,7 @@
+ extern NvBool nvos_is_chipset_io_coherent(void);
+ 
+ #if defined(NVCPU_X86) || defined(NVCPU_X86_64)
+-#define CACHE_FLUSH()  asm volatile("wbinvd":::"memory")
++#define CACHE_FLUSH() // asm volatile("wbinvd":::"memory")
+ #define WRITE_COMBINE_FLUSH() asm volatile("sfence":::"memory")
+ #elif defined(NVCPU_FAMILY_ARM)
+ #if defined(NVCPU_ARM)
