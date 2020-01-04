@@ -21,7 +21,6 @@ I use a few different patches in order to my system
 
 ### app-emulation/wine-staging-4.21
 
-- Enable FreeType rendering without subpixel filtering (Osu!)
 - Allow emulation of system calls using seccomp (League of Legends 9.10+)
 
 ### sys-libs/glibc
