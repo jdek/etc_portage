@@ -49,6 +49,7 @@ app-editors/emacs* xft toolkit-scroll-bars ssl cairo libxml2 source sound
 sys-devel/gdb source-highlight -python
 net-mail/mu emacs
 
+app-text/texlive-core xetex
 dev-lang/mono
 
 app-emulation/qemu qemu_user_targets_arm qemu_softmmu_targets_arm static-user
